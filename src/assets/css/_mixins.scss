@@ -1,0 +1,13 @@
+//@mixin respond-to($breakpoint) {
+//  @if map-has-key($breakpoints, $breakpoint) {
+//    @media (min-width: map-get($breakpoints, $breakpoint)) {
+//      @content
+//    }
+//  })
+//}
+
+@mixin col($span) {
+  $column-width: 100% / $columns * $span;
+  flex: 0 0 $column-width;
+  max-width: $column-width;
+}

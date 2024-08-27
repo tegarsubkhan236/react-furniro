@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,600&display=swap');
+
+// Colors
+$primary-color: #B88E2F;
+$secondary-color: #FFF3E3;
+$background-color: #FFFFFF;
+$text-color: #333333;
+
+// Fonts
+$base-font-family: 'Poppins', sans-serif;
+$base-font-size: 1rem;
+
+// Grid
+$container-padding: 15px;
+$column-gap: 15px;
+$columns: 12;
+
+// Breakpoints
+$breakpoints: (
+        'xs': 0,
+        'sm': 576px,
+        'md': 768px,
+        'lg': 992px,
+        'xl': 1200px
+);
