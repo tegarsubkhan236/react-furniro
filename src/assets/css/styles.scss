@@ -1,9 +1,10 @@
-@import "normalize.css";
 @import "variables";
 @import "mixins";
 @import "functions";
 
 * {
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
 }
 
