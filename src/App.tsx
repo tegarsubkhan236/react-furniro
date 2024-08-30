@@ -1,12 +1,9 @@
 import './assets/css/styles.scss';
-import {PageBanner, PageHeader} from "./components";
+import {Home} from "./pages";
 
 function App() {
     return (
-        <>
-            <PageHeader/>
-            <PageBanner/>
-        </>
+        <Home/>
     )
 }
 

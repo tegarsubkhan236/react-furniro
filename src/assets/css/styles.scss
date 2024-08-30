@@ -12,9 +12,88 @@ body {
   font-family: $base-font-family;
 }
 
+.container {
+  padding: 10px 80px 10px 80px;
+}
+
+.btn {
+  border: none;
+  cursor: pointer;
+  width: 200px;
+  height: 50px;
+  padding: 14px 28px;
+
+  &.primary {
+    background-color: $primary-color;
+    color: $text-color-white;
+    font-weight: 600;
+    box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
+    transition: 0.3s ease-in-out;
+    &:hover {
+      background: transparent;
+      color: $text-color-black;
+      border: 3px solid $primary-color;
+    }
+  }
+  &.secondary {
+    background-color: $secondary-color;
+    color: $primary-color;
+    font-weight: 600;
+    box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
+    transition: color 0.3s ease-in-out;
+    &:hover {
+      background: #FAE6A8FF;
+      color: $text-color-black;
+    }
+  }
+}
+
+.text {
+  font-size: 1rem;
+  font-weight: 400;
+
+  &.heading {
+    font-size: 50px;
+    line-height: 50px;
+    font-weight: 700;
+    margin: 10px 0 10px 0;
+    color: $primary-color;
+  }
+  &.subheading {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 3px;
+  }
+  &.title {
+    font-size: 32px;
+    font-weight: 600;
+  }
+  &.title-product {
+    font-size: 24px;
+    font-weight: 500;
+  }
+  &.subtitle {
+    font-size: 20px;
+    font-weight: 500;
+    color: #616161;
+  }
+}
+
+.section-wrapper {
+  .section-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  .section-content {
+    margin-bottom: 50px;
+  }
+}
+
 .navbar {
   padding: 1rem 2rem;
-  background-color: #ffffff;
+  background-color: white;
 
   .nav-wrapper {
     display: flex;
@@ -27,7 +106,6 @@ body {
     display: flex;
     align-items: center;
     text-decoration: none;
-    color: #000000;
 
     img {
       width: auto;
@@ -37,6 +115,7 @@ body {
 
     span {
       font-family: $logo-font-family;
+      color: $text-color-black;
       font-size: 1.5rem;
       font-weight: bold;
     }
@@ -49,15 +128,9 @@ body {
     margin: 0;
 
     .menu-item {
-      margin-left: 20px;
-
-      &:first-child {
-        margin-left: 0;
-      }
-
       .menu-link {
         text-decoration: none;
-        color: #333333;
+        color: $text-color-black;
         font-size: 1rem;
 
         img {
@@ -71,57 +144,84 @@ body {
       }
     }
   }
+
+  .center-menu {
+    @extend .menu;
+    gap: 40px;
+  }
+
+  .right-menu {
+    @extend .menu;
+    gap: 15px;
+  }
 }
 
-.banner-wrapper {
+
+.img-hero-wrapper {
   position: relative;
 
-  .banner-img {
+  .img-hero {
     width: 100%;
-    height: 540px;
+    height: 500px;
     object-fit: cover;
   }
 
-  .banner-card {
+  .card-hero {
     position: absolute;
+    background-color: $secondary-color;
     top: 100px;
     right: 90px;
     width: 470px;
-    height: 300px;
-    background-color: $secondary-color;
+    padding: 20px;
+    height: 320px;
+  }
+}
 
-    .banner-content {
+.img-text-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+
+
+  .img-text-item {
+    position: relative;
+    background: rgba(0, 0, 0, 0.5);
+
+    img {
+      opacity: 1;
+      width: 300px;
+      height: auto;
+      display: block;
+      transition: opacity 0.5s ease;
+      backface-visibility: hidden;
+    }
+
+    .content {
+      position: absolute;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      color: #f1f1f1;
+      width: 100%;
       padding: 20px;
-      display: flex;
-      flex-direction: column;
+    }
 
-      .subtitle {
-        font-size: 16px;
-        font-weight: 600;
-        letter-spacing: 3px;
-      }
-      .title {
-        font-size: 48px;
-        line-height: 50px;
-        color: $primary-color;
-      }
-      .text {
-        font-size: 14px;
-        font-weight: 500;
-      }
-      .btn-primary {
-        margin-top: 40px;
-        width: 200px;
-        height: 50px;
-        background-color: $primary-color;
-        border: none;
-        cursor: pointer;
-        color: #FFFFFF;
-        font-weight: bold;
+    .content-overlay {
+      transition: opacity 0.5s ease;
+      opacity: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      background: rgba(0, 0, 0, 0.5);
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+    }
+
+    &:hover {
+      img {
+        opacity: 0.3;
       }
 
-      .btn-primary:hover {
-        background: #dca018;
+      .content-overlay {
+        opacity: 1;
       }
     }
   }

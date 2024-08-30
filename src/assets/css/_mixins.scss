@@ -1,13 +1,23 @@
-//@mixin respond-to($breakpoint) {
-//  @if map-has-key($breakpoints, $breakpoint) {
-//    @media (min-width: map-get($breakpoints, $breakpoint)) {
-//      @content
-//    }
-//  })
-//}
+@mixin btn_style($bg-color, $hover-color, $text-color: #FFFFFF, $outline: false) {
+  @if $outline == false {
+    background-color: $bg-color;
+    color: $text-color;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+    &:hover {
+      background-color: $hover-color;
+    }
 
-@mixin col($span) {
-  $column-width: 100% / $columns * $span;
-  flex: 0 0 $column-width;
-  max-width: $column-width;
+  } @else {
+    background-color: $bg-color;
+    color: $text-color;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+    &:hover {
+      background: transparent;
+      color: #333333;
+      border: 3px solid $hover-color;
+    }
+  }
+  
 }

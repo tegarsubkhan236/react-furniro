@@ -12,13 +12,13 @@ const PageHeader = () => {
                     <img src={Logo} alt="Furniro Logo"/>
                     <span>Furniro</span>
                 </a>
-                <ul className="menu">
+                <ul className="center-menu">
                     <li className="menu-item"><a href="#" className="menu-link">Home</a></li>
                     <li className="menu-item"><a href="#" className="menu-link">Shop</a></li>
                     <li className="menu-item"><a href="#" className="menu-link">About</a></li>
                     <li className="menu-item"><a href="#" className="menu-link">Contact</a></li>
                 </ul>
-                <ul className="menu">
+                <ul className="right-menu">
                     <li className="menu-item">
                         <a href="#" className="menu-link" aria-label="Account">
                             <img src={AccountAlert} className="icon" alt="Account Alert Icon"/>
