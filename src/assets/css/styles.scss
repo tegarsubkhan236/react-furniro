@@ -6,6 +6,8 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
 }
 
 body {
@@ -13,7 +15,7 @@ body {
 }
 
 .container {
-  padding: 10px 80px 10px 80px;
+  padding: 10px 80px;
 }
 
 .btn {
@@ -68,14 +70,30 @@ body {
     font-size: 32px;
     font-weight: 600;
   }
-  &.title-product {
-    font-size: 24px;
-    font-weight: 500;
-  }
   &.subtitle {
     font-size: 20px;
     font-weight: 500;
-    color: #616161;
+    color: $text-subtitle-color;
+  }
+  &.product-title {
+    font-size: 24px;
+    font-weight: 500;
+  }
+  &.product-subtitle {
+    font-size: 24px;
+    font-weight: 500;
+  }
+  &.product-price {
+    font-size: 24px;
+    font-weight: 500;
+  }
+  &.product-after-disc {
+    font-size: 24px;
+    font-weight: 500;
+  }
+  &.product-before-disc {
+    font-size: 24px;
+    font-weight: 500;
   }
 }
 
@@ -105,7 +123,6 @@ body {
   .logo {
     display: flex;
     align-items: center;
-    text-decoration: none;
 
     img {
       width: auto;
@@ -123,13 +140,11 @@ body {
 
   .menu {
     display: flex;
-    list-style: none;
     padding: 0;
     margin: 0;
 
     .menu-item {
       .menu-link {
-        text-decoration: none;
         color: $text-color-black;
         font-size: 1rem;
 
@@ -156,6 +171,142 @@ body {
   }
 }
 
+.product-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 20px;
+
+  .product-card {
+    width: 250px;
+    height: 400px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    position: relative;
+    img {
+      width: 100%;
+      height: auto;
+    }
+    .product-label {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 45px;
+      height: 45px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: $text-color-white;
+
+      &.disc {
+        background-color: #E97171;
+      }
+
+      &.new {
+        background-color: #2EC1AC;
+      }
+    }
+    .product-description {
+      //background-color: #B88E2F;
+      padding: 15px 15px 35px 15px;
+    }
+  }
+}
+
+.footer {
+  padding: 35px 80px;
+
+  .footer-content {
+    display: flex;
+    gap: 90px;
+  }
+
+  .footer-left-content {
+    flex: 0 0 25%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    .footer-logo {
+      font-size: 24px;
+      font-weight: 600;
+    }
+
+    .footer-description {
+      font-size: 1rem;
+      font-weight: 400;
+      color: $text-subtitle-color;
+    }
+  }
+
+  .footer-right-content {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+
+    .footer-menu {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+
+      .footer-menu-title {
+        font-size: 16px;
+        font-weight: 500;
+        color: $text-subtitle-color;
+      }
+
+      .footer-menu-content {
+        ul {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+
+          li {
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+
+            &:hover {
+              color: $primary-color;
+            }
+          }
+        }
+
+        input,
+        button {
+          height: 24px;
+          outline: 0;
+          border-width: 0 0 2px;
+          background: transparent;
+          font-size: 14px;
+          font-weight: 600;
+          cursor: pointer;
+
+          &:hover {
+            border-color: $primary-color;
+          }
+
+          &:focus {
+            border-color: $primary-color;
+          }
+        }
+
+        input {
+          margin-right: 20px;
+        }
+      }
+    }
+  }
+
+  .footer-copyright {
+    margin-top: 40px;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
 
 .img-hero-wrapper {
   position: relative;
@@ -174,6 +325,7 @@ body {
     width: 470px;
     padding: 20px;
     height: 320px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   }
 }
 
@@ -181,10 +333,10 @@ body {
   display: flex;
   justify-content: space-evenly;
 
-
   .img-text-item {
     position: relative;
     background: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 
     img {
       opacity: 1;
@@ -192,7 +344,6 @@ body {
       height: auto;
       display: block;
       transition: opacity 0.5s ease;
-      backface-visibility: hidden;
     }
 
     .content {
