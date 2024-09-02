@@ -53,7 +53,7 @@ const PageFooter = () => {
                 </div>
                 <div className="footer-copyright">
                     <hr/>
-                    <p>2023 funiro. All rights reverved</p>
+                    <p>2023 furniro. All rights reverved</p>
                 </div>
             </div>
         </>
