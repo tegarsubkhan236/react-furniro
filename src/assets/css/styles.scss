@@ -1,14 +1,8 @@
+@import "null";
 @import "variables";
 @import "mixins";
 @import "functions";
 
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  text-decoration: none;
-  list-style: none;
-}
 
 body {
   font-family: $base-font-family;
